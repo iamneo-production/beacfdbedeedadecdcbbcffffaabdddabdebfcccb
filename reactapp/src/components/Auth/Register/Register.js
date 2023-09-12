@@ -45,15 +45,15 @@ export default function Register() {
     });
   };
 
-  const handleConfirmation = () => {
-    console.log("handleConfirmation called");
-    sendDataToDatabase();
-    setSuccessModalOpen(true);
-    setTimeout(() => {
-      setSuccessModalOpen(false);
-      navigate("/login");
-    }, 3500); // Close the modal and navigate after 3.5 seconds
-  };
+  // const handleConfirmation = () => {
+  //   console.log("handleConfirmation called");
+  //   sendDataToDatabase();
+  //   setSuccessModalOpen(true);
+  //   setTimeout(() => {
+  //     setSuccessModalOpen(false);
+  //     navigate("/login");
+  //   }, 3500); // Close the modal and navigate after 3.5 seconds
+  // };
 
   const sendDataToDatabase = async () => {
     console.log("data is in");
@@ -185,11 +185,11 @@ export default function Register() {
       }));
       isValid = false;
     }
-    if (isValid) {
-      handleConfirmation(); // Show confirmation modal immediately
+    // if (isValid) {
+    //   //handleConfirmation(); // Show confirmation modal immediately
 
-      // Send the data to the database in the background
-    }
+    //   // Send the data to the database in the background
+    // }
   };
 
   return (
