@@ -34,11 +34,9 @@ public class AuthController {
 
     @PostMapping("/admin/signup")
 public ResponseEntity<String> adminSignup(@RequestBody User adminUser) {
-    // Generate a random email address for the admin user
-    // Check if the email already exists in the user table
-    if (authService.getUserByEmail(adminUser.getEmail()).isPresent()) {
-        return ResponseEntity.ok("Email already exists");
-    } else {
+    // if (authService.getUserByEmail(adminUser.getEmail()).isPresent()) {
+    //     return ResponseEntity.ok("Email already exists");
+    // } else {
         authService.saveUser(adminUser);
         return ResponseEntity.ok("New Admin User has been added");
     }
