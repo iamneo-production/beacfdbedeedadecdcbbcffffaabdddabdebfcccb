@@ -72,6 +72,7 @@ export default function Register() {
 
     try {
       const response = await fetch(apiUrl, {
+        mode: "no-cors",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
