@@ -47,6 +47,7 @@ export default function Register() {
 
   const handleConfirmation = () => {
     console.log("handleConfirmation called");
+    sendDataToDatabase();
     setSuccessModalOpen(true);
     setTimeout(() => {
       setSuccessModalOpen(false);
@@ -55,6 +56,7 @@ export default function Register() {
   };
 
   const sendDataToDatabase = async () => {
+    console.log("data is in");
     let apiUrl = "";
 
     if (formData.userRole === "admin") {
@@ -184,7 +186,6 @@ export default function Register() {
       handleConfirmation(); // Show confirmation modal immediately
 
       // Send the data to the database in the background
-      sendDataToDatabase();
     }
   };
 
