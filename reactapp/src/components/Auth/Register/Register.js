@@ -63,7 +63,8 @@ export default function Register() {
       console.log("adminAPI");
       apiUrl =
         "https://8080-beacfdbedeedadecdcbbcffffdccbe.premiumproject.examly.io/auth/admin/signup";
-    } else if (formData.userRole === "user") {
+    }
+    if (formData.userRole === "user") {
       console.log("userAPI");
       apiUrl =
         "https://8080-beacfdbedeedadecdcbbcffffdccbe.premiumproject.examly.io/auth/user/signup";
