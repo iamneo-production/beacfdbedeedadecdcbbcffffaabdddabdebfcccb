@@ -16,5 +16,5 @@ public interface AuthService {
     Optional<User> getUserByEmailAndPassword(String email, String password);
     Optional<User> getAdminByEmailAndPassword(String email, String password);
 
-    Optional<Object> getUserByEmail(String email);
+    Optional<User> getUserByEmail(String email);
 }
