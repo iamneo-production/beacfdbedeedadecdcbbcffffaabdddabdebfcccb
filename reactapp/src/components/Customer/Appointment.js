@@ -12,6 +12,7 @@ import {
 import Navbar from "../Navbar";
 import EditBookingModal from "./EditBookingModal";
 import ReviewModal from "./ReviewModal";
+import { generatePDF } from "./BillGenerator";
 
 const rows = [
   {
@@ -46,6 +47,11 @@ const columnWidths = {
   delete: "5%",
   billGen: "5%",
   review: "5%", // Adjust the width of the 'Timings' column
+};
+
+const handleGenerateBillClick = () => {
+  // Call the generatePDF function from the BillGenerator component
+  generatePDF(); // This assumes that BillGenerator has a generatePDF function
 };
 
 export default function Appointment() {
@@ -139,6 +145,7 @@ export default function Appointment() {
                         ? "Click to Generate Bill"
                         : "Generated bill will be provided only after service"
                     }
+                    onClick={handleGenerateBillClick}
                   >
                     <strong>Generate Bill</strong>
                   </Button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -339,14 +339,19 @@ export default function Register() {
               p: 4,
               maxWidth: "80%",
               textAlign: "center",
+              display: "flex",
+              flexDirection: "column", // Ensure the content is stacked vertically
+              alignItems: "center", // Center the content horizontally
+              color:"white",
+              backgroundColor: '#79e63e', // Change 'your-color-here' to the color you want
             }}
           >
-            <Typography id="successful-registration-modal" variant="h6">
-              Successful Registration
+            <Typography id="successful-registration-modal" variant="h4">
+              <strong>Successful Registration</strong>
             </Typography>
             <Typography id="successful-registration-description" sx={{ mt: 2 }}>
-              You have been successfully registered. Redirecting to login
-              page...
+              <strong>You have been successfully registered. Redirecting to login
+              page...</strong>
             </Typography>
           </Box>
         </Modal>
