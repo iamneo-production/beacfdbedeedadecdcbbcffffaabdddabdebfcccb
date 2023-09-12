@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io")
+@CrossOrigin(origins = "https://8081-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io")
 @RestController
 @RequestMapping("/auth")
 
