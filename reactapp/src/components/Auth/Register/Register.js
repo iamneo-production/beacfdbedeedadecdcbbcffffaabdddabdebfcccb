@@ -55,41 +55,7 @@ export default function Register() {
   //   }, 3500); // Close the modal and navigate after 3.5 seconds
   // };
 
-  const sendDataToDatabase = async () => {
-    console.log("data is in");
-    let apiUrl = "";
 
-    if (formData.userRole === "admin") {
-      console.log("adminAPI");
-      apiUrl =
-        "https://8080-beacfdbedeedadecdcbbcffffdccbe.premiumproject.examly.io/auth/admin/signup";
-    }
-    if (formData.userRole === "user") {
-      console.log("userAPI");
-      apiUrl =
-        "https://8080-beacfdbedeedadecdcbbcffffdccbe.premiumproject.examly.io/auth/user/signup";
-    }
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        console.error(`HTTP error! Status: ${response.status}`);
-        const responseText = await response.text();
-        console.error("Response Text:", responseText);
-        return;
-      }
-
-      const data = await response.json();
-      console.log("New User Added:", data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
   const handleSubmit = async (event) => {
     console.log("handleSubmit called");
@@ -186,8 +152,21 @@ export default function Register() {
       isValid = false;
     }
     if (isValid) {
-      sendDataToDatabase();
-    }
+      const apiEndpoint = signUpData.userRole === 'admin' ? 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/admin/signup' : 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/user/signup';        
+        axios
+          .post(apiEndpoint, signUpData)
+          .then((response) => {
+            console.log(response.data); // Handle success
+
+            if(response.data === "Email already exists"){
+              alert("Please Login , you have already signed up!")
+            }
+            else navigate(`/login`);
+          })
+          .catch((error) => {
+            console.error(error); // Handle error
+          });
+      };
   };
 
   return (
