@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public abstract class AuthServiceImpl implements AuthService{
+public class AuthServiceImpl implements AuthService { // Remove "abstract" keyword
     @Autowired
     private AuthRepository authRepository;
 
@@ -17,19 +17,22 @@ public abstract class AuthServiceImpl implements AuthService{
     public User saveUser(User user){
         return authRepository.save(user);
     }
+
     @Override
     public User saveAdmin(User adminUser){
         return authRepository.save(adminUser);
     }
+
     @Override
     public Optional<User> getUserByEmailAndPassword(String email, String password) {
         return authRepository.findByEmailAndPasswordAndUserRole(email, password,"user");
-
     }
+
     @Override
     public Optional<User> getAdminByEmailAndPassword(String email, String password) {
         return authRepository.findByEmailAndPasswordAndUserRole(email, password, "admin");
     }
+
     @Override
     public List<User> getAllUsers(){
         return authRepository.findAll();
