@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ProductId;
+    private Long productId; // Change the field name to "productId" with a lowercase "p"
     private String productName;
     private String productModelNo;
     private String dateOfPurchase;
@@ -18,7 +18,7 @@ public class Product {
     private String availableSlots;
 
     public Product(){
-        //TODO document why the constructor
+        // TODO document why the constructor
     }
 
     public Long getProductId() {
@@ -26,7 +26,7 @@ public class Product {
     }
 
     public void setProductId(Long productId) {
-        ProductId = productId;
+        this.productId = productId; // Use "this.productId" to refer to the class field
     }
 
     public String getProductName() {
