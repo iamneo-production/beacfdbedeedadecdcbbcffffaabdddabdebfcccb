@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Modal } from "@mui/material";
+import axios from 'axios';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -152,9 +153,9 @@ export default function Register() {
       isValid = false;
     }
     if (isValid) {
-      const apiEndpoint = signUpData.userRole === 'admin' ? 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/admin/signup' : 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/user/signup';        
+      const apiEndpoint = formData.userRole === 'admin' ? 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/admin/signup' : 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/user/signup';        
         axios
-          .post(apiEndpoint, signUpData)
+          .post(apiEndpoint, formData)
           .then((response) => {
             console.log(response.data); // Handle success
 
