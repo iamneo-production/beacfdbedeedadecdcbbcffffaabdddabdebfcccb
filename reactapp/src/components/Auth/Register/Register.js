@@ -185,11 +185,9 @@ export default function Register() {
       }));
       isValid = false;
     }
-    // if (isValid) {
-    //   //handleConfirmation(); // Show confirmation modal immediately
-
-    //   // Send the data to the database in the background
-    // }
+    if (isValid) {
+      sendDataToDatabase();
+    }
   };
 
   return (
