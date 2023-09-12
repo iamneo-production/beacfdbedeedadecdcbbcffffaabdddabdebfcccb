@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public interface AuthService {
     public User saveUser(User user);
-    public List<User> getAllUsers();
+    
 
     public User saveAdmin(User adminData);
 
@@ -17,4 +17,5 @@ public interface AuthService {
     Optional<User> getAdminByEmailAndPassword(String email, String password);
 
     Optional<User> getUserByEmail(String email);
+    public List<User> getAllUsers();
 }
