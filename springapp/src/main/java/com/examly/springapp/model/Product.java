@@ -22,7 +22,7 @@ public class Product {
     }
 
     public Long getProductId() {
-        return ProductId;
+        return productId;
     }
 
     public void setProductId(Long productId) {

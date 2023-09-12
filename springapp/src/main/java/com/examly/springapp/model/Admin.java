@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Admin extends User {
-@Id
+public class Admin{
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long AdminId;
     private String email;

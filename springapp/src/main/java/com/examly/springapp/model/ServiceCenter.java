@@ -19,7 +19,7 @@ public class ServiceCenter {
     private String serviceCenterDescription;
 
     public ServiceCenter(){
-
+        //Todo as to why the constructor is empty
     }
 
     public Long getServiceCenterId() {
