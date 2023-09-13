@@ -39,13 +39,13 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         return savedUser;
     }
     public void duplicateAdminUsers() {
-        List<User> adminUsers = authRepository.findByUserRole("Admin");
+        List<User> adminUsers = authRepository.findByUserRole("admin");
 
         for (User adminUser : adminUsers) {
             Admin admin = new Admin();
             admin.setEmail(adminUser.getEmail());
             admin.setPassword(adminUser.getPassword());
-            admin.setUsername(adminUser.getUsername());
+            admin.setUserRole(adminUser.getUserRole());
             admin.setMobileNumber(adminUser.getMobileNumber());
             // Set other fields as needed
 
