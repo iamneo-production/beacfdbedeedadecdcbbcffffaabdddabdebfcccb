@@ -4,6 +4,7 @@ import com.examly.springapp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.examly.springapp.model.Login;
+import com.examly.springapp.model.Admin;
 import com.examly.springapp.repository.AdminRepository;
 import com.examly.springapp.repository.LoginRepository;
 import com.examly.springapp.repository.AuthRepository;
