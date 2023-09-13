@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.examly.springapp.model.Login;
 import com.examly.springapp.repository.AdminRepository;
 import com.examly.springapp.repository.LoginRepository;
+import com.examly.springapp.repository.AuthRepository;
 
 
 
@@ -37,7 +38,7 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         return savedUser;
     }
     public void duplicateAdminUsers() {
-        List<User> adminUsers = userRepository.findByUserRole("Admin");
+        List<User> adminUsers = authRepository.findByUserRole("Admin");
 
         for (User adminUser : adminUsers) {
             Admin admin = new Admin();
