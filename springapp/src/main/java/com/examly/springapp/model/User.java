@@ -25,6 +25,10 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Login login;
 
+    @OneToOne(mappedBy = "user")
+    private Admin admin;
+
+
     public Long getUserId() {
         return UserId;
     }
