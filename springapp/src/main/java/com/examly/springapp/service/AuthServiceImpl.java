@@ -4,6 +4,9 @@ import com.examly.springapp.model.User;
 import com.examly.springapp.repository.AuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.examly.springapp.repository.LoginRepository;
+import com.examly.springapp.model.Login;
+
 
 import java.util.List;
 import java.util.Optional;
