@@ -30,7 +30,6 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         login.setPassword(user.getPassword());
         // Set the user reference for Login
         login.setUser(user);
-
         // Save the login entity
         loginRepository.save(login);
         return savedUser;
@@ -46,11 +45,10 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         admin.setAdminPassword(user.getPassword());
         admin.setAdminMobileNumber(user.getMobileNumber());
         admin.setUserRole(user.getUserRole());
-        admin.setUser(user);
+        admin.setUser(savedAdmin);
         adminRepository.save(admin);
     }
-
-    return savedUser;
+    return savedAdmin;
 }
 
     @Override
