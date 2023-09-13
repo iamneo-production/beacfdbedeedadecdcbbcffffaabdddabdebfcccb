@@ -1,11 +1,12 @@
 package com.examly.springapp.service;
 
 import com.examly.springapp.model.User;
-import com.examly.springapp.repository.AuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.examly.springapp.repository.LoginRepository;
 import com.examly.springapp.model.Login;
+import com.examly.springapp.repository.AdminRepository;
+import com.examly.springapp.repository.LoginRepository;
+
 
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
     @Autowired
     private LoginRepository loginRepository;
 
+    @Autowired
+    private AdminRepository adminRepository;
+
     @Override
     public User saveUser(User user){
         User savedUser = authRepository.save(user);
@@ -31,7 +35,20 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         // Save the login entity
         loginRepository.save(login);
         return savedUser;
+    }
+    public void duplicateAdminUsers() {
+        List<User> adminUsers = userRepository.findByUserRole("Admin");
 
+        for (User adminUser : adminUsers) {
+            Admin admin = new Admin();
+            admin.setEmail(adminUser.getEmail());
+            admin.setPassword(adminUser.getPassword());
+            admin.setUsername(adminUser.getUsername());
+            admin.setMobileNumber(adminUser.getMobileNumber());
+            // Set other fields as needed
+
+            adminRepository.save(admin);
+        }
     }
 
     @Override
