@@ -20,6 +20,9 @@ public class User {
         // TODO document why this constructor is empty
     }
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Login login;
+
     public Long getUserId() {
         return UserId;
     }

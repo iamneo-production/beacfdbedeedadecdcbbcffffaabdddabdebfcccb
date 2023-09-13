@@ -13,6 +13,9 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
     @Autowired
     private AuthRepository authRepository;
 
+    @Autowired
+    private LoginRepository loginRepository;
+
     @Override
     public User saveUser(User user){
         return authRepository.save(user);
@@ -41,4 +44,9 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
     public List<User> getAllUsers(){
         return authRepository.findAll();
     }
+
+    // Create a Login entity and duplicate username and password
+    Login login = new Login();
+    login.setUsername(user.getUsername());
+    login.setPassword(user.getPassword());
 }
