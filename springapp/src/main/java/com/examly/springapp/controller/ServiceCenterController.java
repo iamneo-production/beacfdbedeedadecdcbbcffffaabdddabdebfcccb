@@ -15,7 +15,7 @@ public class ServiceCenterController {
 
     @PostMapping("/addServiceCenter")
     public String add(@RequestBody ServiceCenter serviceCenter){
-        serviceCenter.saveServiceCenter(serviceCenter);
+        serviceCenter.save(serviceCenter);
         return "New Service Center Created";
 
     }
