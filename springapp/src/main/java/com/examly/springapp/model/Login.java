@@ -12,7 +12,7 @@ public class Login {
     public Login(){
         //TODO document why the constructor is empty
     }
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -39,6 +39,9 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
