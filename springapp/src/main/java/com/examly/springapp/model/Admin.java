@@ -56,7 +56,7 @@ public class Admin{
     public void setUserRole(String userRole) {
         this.userRole = userRole;
     }
-    public void setUser(User user) {
+    public void setAdminUser(User user) {
         this.user = user;
     }
 }

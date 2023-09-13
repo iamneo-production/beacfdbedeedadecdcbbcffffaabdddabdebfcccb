@@ -50,7 +50,7 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
             admin.setPassword(savedAdmin.getPassword());
             admin.setMobileNumber(savedAdmin.getMobileNumber());
             admin.setUserRole(savedAdmin.getUserRole());
-            admin.setUser(user);
+            admin.setAdminUser(user);
             adminRepository.save(admin);
             
         }
