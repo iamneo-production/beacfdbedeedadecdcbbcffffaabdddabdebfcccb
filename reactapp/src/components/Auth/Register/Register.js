@@ -154,7 +154,7 @@ export default function Register() {
     }
     if (isValid) {
       const apiEndpoint = formData.userRole === 'admin' ? 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/admin/signup' : 'https://8080-beacfdbedeedadecdcbbcffffaabdddabdebfcccb.premiumproject.examly.io/user/signup';        
-        axios                                                           beacfdbedeedadecdcbbcffffaabdddabdebfcccb
+        axios                                                           
           .post(apiEndpoint, formData)
           .then((response) => {
             console.log(response.data); // Handle success
