@@ -38,25 +38,31 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         loginRepository.save(login);
         return savedUser;
     }
-    public void duplicateAdminUsers() {
-        List<User> adminUsers = authRepository.findByUserRole("admin");
+    
+    @Override
+    public User saveAdmin(User user) {
+        User savedUser = authRepository.save(user);
 
-        for (User adminUser : adminUsers) {
+        // Check if the user has the role "admin"
+        if ("admin".equals(savedUser.getUserRole())) {
             Admin admin = new Admin();
-            admin.setEmail(adminUser.getEmail());
-            admin.setPassword(adminUser.getPassword());
-            admin.setUserRole(adminUser.getUserRole());
-            admin.setMobileNumber(adminUser.getMobileNumber());
+            admin.setEmail(savedUser.getEmail());
+            admin.setPassword(savedUser.getPassword());
+            admin.setMobileNumber(savedUser.getMobileNumber());
+            admin.setUserRole(savedUser.getUserRole());
+
             // Set other fields as needed
 
             adminRepository.save(admin);
+            
         }
+        return savedUser;
     }
 
-    @Override
-    public User saveAdmin(User adminUser){
-        return authRepository.save(adminUser);
-    }
+    // @Override
+    // public User saveAdmin(User adminUser){
+    //     return authRepository.save(adminUser);
+    // }
 
     @Override
     public Optional<User> getUserByEmailAndPassword(String email, String password) {
