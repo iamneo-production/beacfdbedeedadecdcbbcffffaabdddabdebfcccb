@@ -50,7 +50,7 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         adminRepository.save(admin);
     }
 
-    return savedAdmin;
+    return savedUser;
 }
 
     @Override
