@@ -10,7 +10,7 @@ public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long LoginId;
-    private String email;
+    private String username;
     private String password;
     public Login(){
         //TODO document why the constructor is empty
@@ -24,12 +24,12 @@ public class Login {
         LoginId = loginId;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
