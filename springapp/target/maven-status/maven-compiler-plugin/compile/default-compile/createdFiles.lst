@@ -3,9 +3,9 @@ com/examly/springapp/SpringappApplication.class
 com/examly/springapp/service/AuthServiceImpl.class
 com/examly/springapp/repository/LoginRepository.class
 com/examly/springapp/repository/ServiceCenterRepository.class
+com/examly/springapp/model/Admin.class
 com/examly/springapp/config/CorsConfig.class
 com/examly/springapp/service/ServiceCenterServiceImpl.class
-com/examly/springapp/model/Admin.class
 com/examly/springapp/model/Login.class
 com/examly/springapp/service/ServiceCenterService.class
 com/examly/springapp/controller/AuthController.class
