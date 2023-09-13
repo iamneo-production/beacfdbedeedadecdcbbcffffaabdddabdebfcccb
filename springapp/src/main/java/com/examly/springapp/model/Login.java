@@ -1,9 +1,6 @@
 package com.examly.springapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Login {
@@ -15,6 +12,10 @@ public class Login {
     public Login(){
         //TODO document why the constructor is empty
     }
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 
     public Long getLoginId() {
         return LoginId;
