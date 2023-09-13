@@ -1,9 +1,6 @@
 package com.examly.springapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Admin{
@@ -17,6 +14,9 @@ public class Admin{
     public Admin(){
         //TODO document why contructor is empty
     }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public long getAdminId(){
         return AdminId;
@@ -55,6 +55,9 @@ public class Admin{
 
     public void setUserRole(String userRole) {
         this.userRole = userRole;
+    }
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
