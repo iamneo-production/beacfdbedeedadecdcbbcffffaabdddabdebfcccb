@@ -70,7 +70,5 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
     public List<User> getAllUsers(){
         return authRepository.findAll();
     }
-
-    // Create a Login entity and duplicate username and password
     
 }
