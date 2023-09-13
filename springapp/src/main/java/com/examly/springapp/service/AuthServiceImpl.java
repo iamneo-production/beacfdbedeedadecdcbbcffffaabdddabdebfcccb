@@ -32,7 +32,6 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         login.setUser(user);
         // Save the login entity
         loginRepository.save(login);
-        console.log("Duplicated into the Login table");
         return savedUser;
     }
 

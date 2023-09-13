@@ -41,6 +41,7 @@ public ResponseEntity<String> adminSignup(@RequestBody User adminUser) {
         authService.saveUser(adminUser);
         return ResponseEntity.ok("New Admin User has been added");
     }
+}
 
 
 
