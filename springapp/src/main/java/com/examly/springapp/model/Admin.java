@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Admin{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long adminId;
+    private Long AdminId;
     private String email;
     private String password;
     private String mobileNumber;
@@ -19,11 +19,11 @@ public class Admin{
     private User user;
 
     public long getAdminId(){
-        return adminId;
+        return AdminId;
     }
 
     public void setAdminId(Long adminId) {
-        adminId = adminId;
+        AdminId = adminId;
     }
     public String getEmail(){
         return email;
