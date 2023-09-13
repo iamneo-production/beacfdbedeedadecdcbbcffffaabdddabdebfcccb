@@ -7,9 +7,9 @@ public class Admin{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long AdminId;
-    private String email;
-    private String password;
-    private String mobileNumber;
+    private String adminEmail;
+    private String adminPassword;
+    private String adminMobileNumber;
     private String userRole;
     public Admin(){
         //TODO document why contructor is empty
@@ -25,28 +25,28 @@ public class Admin{
     public void setAdminId(Long adminId) {
         AdminId = adminId;
     }
-    public String getEmail(){
-        return email;
+    public String getAdminEmail(){
+        return adminEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAdminEmail(String adminEmail) {
+        this.adminEmail = adminEmail;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getAdminMobileNumber() {
+        return adminMobileNumber;
     }
 
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setAdminMobileNumber(String adminMobileNumber) {
+        this.adminMobileNumber = adminMobileNumber;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 
     public String getUserRole() {

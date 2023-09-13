@@ -42,7 +42,9 @@ public class AuthServiceImpl implements AuthService { // Remove "abstract" keywo
         Admin admin = new Admin();
          return authRepository.save(adminUser);
          if (adminUser.getUserRole().equals("admin")){
-            
+            admin.setAdminEmail(user.getEmail());
+            admin.setAdminMobileNumber(user.getMobileNumber);
+            admin.set(Admin)
          }
      }
     
